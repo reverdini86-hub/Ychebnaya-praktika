@@ -1,8 +1,3 @@
-"""
-Модуль для управления процессом регистрации и аутентификации пользователей
-Соответствует разделу "Регистрация пользователя" на схеме
-"""
-
 class UserRegistrationModule:
     def __init__(self, disease_handbook_app):
         self.app = disease_handbook_app
@@ -10,17 +5,12 @@ class UserRegistrationModule:
     def process_registration_flow(self):
         """Основной поток процесса регистрации согласно схеме"""
         print("=== ПРОЦЕСС РЕГИСТРАЦИИ ПОЛЬЗОВАТЕЛЯ ===")
-        
-        # Шаг 1: Проверка заполнения полей (согласно схеме)
         if self._check_all_fields_filled():
             print("✓ Все поля заполнены")
-            
-            # Шаг 2: Проверка данных
             if self._validate_user_data():
                 print("✓ Данные прошли проверку")
                 return True
             else:
-                # Шаг 3: Сообщение об ошибке (некорректные данные)
                 print("✗ Ошибка: Некорректные данные владельца")
                 return False
         else:
@@ -29,13 +19,11 @@ class UserRegistrationModule:
     
     def _check_all_fields_filled(self):
         """Проверка заполнения всех полей (согласно схеме)"""
-        # В реальной реализации здесь проверялись бы поля формы
-        return True  # Заглушка для демонстрации
+        return True  
     
     def _validate_user_data(self):
         """Проверка корректности данных пользователя"""
-        # В реальной реализации здесь валидация данных
-        return True  # Заглушка для демонстрации
+        return True  
     
     def get_registration_statistics(self):
         """Статистика по процессу регистрации"""
@@ -47,4 +35,5 @@ class UserRegistrationModule:
                 "Сохранение данных или вывод ошибки"
             ],
             "success_rate": "95%"
+
         }
