@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import sqlite3
+import datetime
 
 class DiseaseHandbook:
     def __init__(self, root):
@@ -8,6 +9,7 @@ class DiseaseHandbook:
         self.root.title("Справочник по заболеваниям. Создатель: Анастасия")
         self.root.configure(bg='#E6E6FA')  
         self.root.geometry("800x600")
+        self.start_time = datetime.datetime.now()
         self.create_database()
         self.current_user = None
         self.user_role = None
@@ -214,4 +216,5 @@ class DiseaseHandbook:
 if __name__ == "__main__":
     root = tk.Tk()
     app = DiseaseHandbook(root)
+
     root.mainloop()
